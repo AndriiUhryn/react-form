@@ -120,7 +120,13 @@ export default function useField(
 
     // eslint-disable-next-line
     return React.useCallback(
-      (...args) => formApiRef.current[d](fieldName, ...args),
+      (...args) => {
+        console.log(formApiRef)
+        console.log(fieldName)
+        console.log(args)
+
+        return formApiRef.current[d](fieldName, ...args)
+      },
       // eslint-disable-next-line
       [fieldName]
     )
